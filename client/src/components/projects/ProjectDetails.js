@@ -14,7 +14,7 @@ function ProjectDetails(props){
             const project = res.data
             setProjectState(project)
         })
-    }, [])
+    }, [projectId])
 
     return(
         <div>
