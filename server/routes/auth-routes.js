@@ -6,6 +6,7 @@ const bcrypt = require('bcryptjs');
 const saltRounds = process.env.SALT || 10;
 
 const User = require('./../models/User.model');
+const isNotLoggedIn = require('./../middleware/isNotLoggedIn')
 
 router.post('/signup', (req, res)=>{
 	const {username, email, password} = req.body
@@ -59,5 +60,14 @@ router.get('/logout', (req, res) => {
 		}
 	});
 })
+
+router.get('/isloggedin', (req, res) => {
+	const loggedInUser = req.session.currentUser 
+		if (loggedInUser) {
+			res.json(loggedInUser);
+		} else {
+			res.status(403).json({ message: 'Unauthorised!' });
+		}
+});
 
 module.exports = router;
