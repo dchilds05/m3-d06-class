@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import './App.css';
 
-import * as auth from './services/auth-service'
+import * as auth from './components/auth/auth-service'
 import AddProject from './components/projects/AddProject'
 import ProjectList from './components/projects/ProjectList'
 import ProjectDetails from './components/projects/ProjectDetails';

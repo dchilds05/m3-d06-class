@@ -29,7 +29,7 @@ app.locals.title = `${capitalized(projectName)} created with Ironlauncher`;
 const isLoggedIn = require('./middleware/isLoggedIn');
 
 const authRoutes = require('./routes/auth-routes');
-app.use('/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 
 const projectRouter = require('./routes/project.routes')
 app.use('/api/projects', projectRouter)

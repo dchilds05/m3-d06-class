@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const authService = axios.create({
-    baseURL: 'http://localhost:5000/auth',
+    baseURL: 'http://localhost:5000/api/auth',
     withCredentials: true
 })
 
@@ -26,7 +26,7 @@ function isLoggedIn(){
     return authService.get('/isloggedin')
     .then(res=>res.data)
 }
-export { authService, signup, login, logout}
+export { authService, signup, login, logout, isLoggedIn}
 
 // This form will allow me to import the services into my App with the following "namespace" syntax:
 // import * as authService from './ ...'
